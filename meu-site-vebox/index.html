@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEBox Vidraçaria - Manutenção Preventiva de Box</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Warm Neutrals & Slate Blue -->
+    <!-- Application Structure Plan: A persuasive narrative flow designed to convert. Starts with a Hero section for immediate impact and CTA. An interactive "Problem" diagnostic engages the user personally. A visual "Solution" section clarifies the service value using a before/after diagram. "Why VEBox?" and FAQ sections build trust and overcome objections. A final CTA section closes the loop. This structure turns a passive ad into an active, educational sales tool, which is more effective for converting leads from a simple source text. -->
+    <!-- Visualization & Content Choices: Report Info: Shower door issues. -> Goal: Engage/Relate. -> Viz/Presentation: Interactive checklist (HTML/JS). -> Interaction: User checks symptoms, a dynamic summary message appears. -> Justification: Personalizes the problem, creating urgency. | Report Info: Roller replacement. -> Goal: Compare/Inform. -> Viz/Presentation: HTML/CSS side-by-side diagram of "worn" vs. "new" roller. -> Interaction: Toggle buttons to switch views with descriptive text updates. -> Justification: Visually demonstrates the quality and necessity of the service without using images. | Report Info: FAQs. -> Goal: Organize/Inform. -> Viz/Presentation: Accordion list (HTML/JS). -> Interaction: Click to expand/collapse answers. -> Justification: Saves space and presents info cleanly. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #F8F7F4;
+        }
+        .accent-bg {
+            background-color: #4A6FA5;
+        }
+        .accent-text {
+            color: #4A6FA5;
+        }
+        .accent-border {
+            border-color: #4A6FA5;
+        }
+        .light-bg {
+            background-color: #FFFFFF;
+        }
+        .dark-text {
+            color: #333333;
+        }
+        .subtle-bg {
+            background-color: #EAEAEA;
+        }
+        .symptom-checkbox:checked + label {
+            background-color: #4A6FA5;
+            color: white;
+            border-color: #3b5984;
+        }
+        .symptom-checkbox:checked + label .symptom-icon {
+            transform: scale(1.1);
+        }
+        .faq-question.active + .faq-answer {
+            max-height: 200px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    </style>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body class="hero-bg dark-text">
+
+    <header class="p-4 shadow-md bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold accent-text" style="font-family: 'Poppins', sans-serif;">VE<span class="dark-text">Box</span></h1>
+            <a href="#contato" class="accent-bg text-white font-bold py-2 px-4 rounded-lg hover:bg-opacity-90 transition-colors">
+                Agendar Manutenção
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="text-center py-20 px-4">
+            <div class="container mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Poppins', sans-serif;">Sua porta de box está <span class="accent-text">realmente</span> segura?</h2>
+                <p class="max-w-2xl mx-auto mb-8 text-lg">Pequenos barulhos ou travamentos podem ser um sinal de alerta. A manutenção preventiva é o detalhe que garante a segurança da sua família e a durabilidade do seu box.</p>
+                <a href="#diagnostico" class="bg-white accent-text border-2 accent-border font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors text-lg">
+                    Faça um Diagnóstico Rápido
+                </a>
+            </div>
+        </section>
+
+        <!-- Interactive Diagnostic Section -->
+        <section id="diagnostico" class="py-16 px-4 bg-white">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold mb-2" style="font-family: 'Poppins', sans-serif;">Diagnóstico Interativo</h3>
+                    <p class="max-w-xl mx-auto">Verifique a saúde do seu box. Marque os sintomas que você percebe no dia a dia para ver nossa recomendação.</p>
+                </div>
+                <div id="symptoms-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                    <!-- Symptoms will be injected here by JS -->
+                </div>
+                <div id="diagnostic-result" class="mt-8 text-center p-6 rounded-lg max-w-2xl mx-auto transition-all duration-500" style="min-height: 80px;">
+                    <p id="diagnostic-text" class="text-lg font-semibold"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Solution Section -->
+        <section id="solucao" class="py-16 px-4 hero-bg">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold mb-2" style="font-family: 'Poppins', sans-serif;">A Solução: Qualidade que se Vê e se Sente</h3>
+                    <p class="max-w-xl mx-auto">A troca de roldanas não é apenas um conserto, é um investimento em tranquilidade. Veja a diferença que peças de alta qualidade fazem no seu dia a dia.</p>
+                </div>
+                <div class="flex flex-col md:flex-row gap-8 items-stretch justify-center max-w-4xl mx-auto">
+                    <div class="w-full md:w-1/2 p-6 bg-white rounded-lg shadow-lg text-center flex flex-col">
+                        <h4 class="text-2xl font-bold mb-4">Roldana Desgastada</h4>
+                        <div class="flex-grow flex items-center justify-center mb-4">
+                           <img src="imagens/1.jpeg" alt="Roldana de box de banheiro desgastada e enferrujada" class="w-full h-56 object-contain rounded-lg">
+                        </div>
+                        <p class="dark-text">Com o tempo, o acúmulo de umidade e o uso contínuo causam ferrugem e desgaste, forçando o trilho e o vidro.</p>
+                    </div>
+                    <div class="w-full md:w-1/2 p-6 bg-white rounded-lg shadow-lg text-center border-4 accent-border flex flex-col">
+                        <h4 class="text-2xl font-bold mb-4 accent-text">Roldana Nova VEBox</h4>
+                         <div class="flex-grow flex items-center justify-center mb-4">
+                            <img src="imagens/2.jpg" alt="Roldana de box de banheiro nova e de alta qualidade" class="w-full h-56 object-contain rounded-lg">
+                        </div>
+                        <p class="dark-text">Utilizamos peças de alta qualidade, com materiais resistentes que garantem um deslizar suave e seguro por muito mais tempo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why VEBox Section -->
+        <section id="porque-vebox" class="py-16 px-4 bg-white">
+            <div class="container mx-auto text-center">
+                <h3 class="text-3xl font-bold mb-10" style="font-family: 'Poppins', sans-serif;">Segurança e Qualidade em Cada Detalhe</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="p-6">
+                        <div class="accent-bg text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-4 text-3xl">🛡️</div>
+                        <h4 class="text-xl font-bold mb-2">Foco na Segurança</h4>
+                        <p>Nossa prioridade é evitar acidentes. Um serviço bem feito garante a proteção da sua família.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="accent-bg text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-4 text-3xl">⚙️</div>
+                        <h4 class="text-xl font-bold mb-2">Peças de Alta Qualidade</h4>
+                        <p>Investimos em componentes duráveis para que você não tenha dores de cabeça no futuro.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="accent-bg text-white w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-4 text-3xl">👨‍🔧</div>
+                        <h4 class="text-xl font-bold mb-2">Equipe Especializada</h4>
+                        <p>Profissionais experientes para uma instalação rápida, limpa e eficiente em Manaus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 px-4 hero-bg">
+            <div class="container mx-auto max-w-3xl">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold mb-2" style="font-family: 'Poppins', sans-serif;">Dúvidas Frequentes</h3>
+                    <p>Respostas para as perguntas mais comuns sobre a manutenção do box.</p>
+                </div>
+                <div class="space-y-4">
+                    <!-- FAQs will be injected here by JS -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Final CTA / Contact Section -->
+        <section id="contato" class="py-20 px-4 accent-bg text-white">
+            <div class="container mx-auto text-center">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Poppins', sans-serif;">Não espere o problema acontecer.</h3>
+                <p class="max-w-xl mx-auto mb-8 text-lg">Agende sua manutenção preventiva hoje mesmo e garanta a segurança e o bom funcionamento do seu box.</p>
+                <a href="https://wa.me/5592XXXXXXXXX" target="_blank" class="bg-white accent-text font-bold py-4 px-10 rounded-lg hover:bg-gray-100 transition-colors text-xl inline-flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.398 1.898 6.166l-1.29 4.721 4.833-1.274z"/></svg>
+                    Agendar via WhatsApp
+                </a>
+                <p class="mt-6 text-sm">Atendemos em toda Manaus - AM</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center p-4 bg-white dark-text">
+        <p>&copy; 2024 VEBox Vidraçaria. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Data for dynamic content ---
+            const symptoms = [
+                { id: 'ruido', text: 'Faz barulho ao abrir/fechar?', icon: '🔊' },
+                { id: 'trava', text: 'A porta emperra ou trava?', icon: '🚧' },
+                { id: 'dificil', text: 'Está pesada ou difícil de mover?', icon: '🏋️' },
+                { id: 'desalinhada', text: 'A porta parece torta ou desalinhada?', icon: '📐' },
+                { id: 'ferrugem', text: 'Há sinais de ferrugem nas peças?', icon: '🔩' },
+                { id: 'folga', text: 'A porta balança ou tem muita folga?', icon: '💨' }
+            ];
+
+            const faqs = [
+                { q: 'Com que frequência devo fazer a manutenção?', a: 'Recomendamos a troca preventiva das roldanas a cada 12 meses para garantir a máxima segurança e funcionamento, mesmo que não haja sinais visíveis de desgaste.' },
+                { q: 'Quanto tempo demora o serviço?', a: 'A troca completa do kit de roldanas é um serviço rápido e limpo, geralmente concluído em menos de uma hora pela nossa equipe especializada.' },
+                { q: 'O que está incluso na manutenção?', a: 'Nossa manutenção preventiva inclui a troca completa do kit de roldanas (superiores e inferiores), a limpeza dos trilhos e a regulagem da porta do seu box.' },
+                { q: 'Por que não posso esperar a peça quebrar?', a: 'Esperar a quebra pode resultar em acidentes graves, além de custos muito maiores, como a necessidade de trocar a porta de vidro inteira, que é muito mais caro que a manutenção.' }
+            ];
+
+            // --- Populate Symptoms ---
+            const symptomsList = document.getElementById('symptoms-list');
+            symptoms.forEach(symptom => {
+                const symptomEl = document.createElement('div');
+                symptomEl.innerHTML = `
+                    <input type="checkbox" id="${symptom.id}" class="symptom-checkbox hidden">
+                    <label for="${symptom.id}" class="flex flex-col items-center justify-center text-center p-4 border-2 rounded-lg cursor-pointer transition-all duration-300 hover:shadow-md h-full">
+                        <span class="symptom-icon text-4xl mb-2 transition-transform">${symptom.icon}</span>
+                        <span class="font-semibold">${symptom.text}</span>
+                    </label>
+                `;
+                symptomsList.appendChild(symptomEl);
+            });
+
+            // --- Populate FAQs ---
+            const faqContainer = document.querySelector('#faq .space-y-4');
+            faqs.forEach(faq => {
+                const faqEl = document.createElement('div');
+                faqEl.className = 'bg-white rounded-lg shadow-sm overflow-hidden';
+                faqEl.innerHTML = `
+                    <button class="faq-question w-full text-left p-4 font-bold flex justify-between items-center dark-text">
+                        ${faq.q}
+                        <span class="transform transition-transform duration-300">▼</span>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out px-4">
+                        <p>${faq.a}</p>
+                    </div>
+                `;
+                faqContainer.appendChild(faqEl);
+            });
+
+            // --- Interactive Logic ---
+            const checkboxes = document.querySelectorAll('.symptom-checkbox');
+            const resultDiv = document.getElementById('diagnostic-result');
+            const resultText = document.getElementById('diagnostic-text');
+
+            function updateDiagnostic() {
+                const checkedCount = document.querySelectorAll('.symptom-checkbox:checked').length;
+                resultDiv.classList.remove('bg-green-100', 'bg-yellow-100', 'bg-red-100', 'accent-bg');
+                
+                if (checkedCount === 0) {
+                    resultText.textContent = 'Selecione os sintomas para uma avaliação.';
+                    resultDiv.classList.add('subtle-bg');
+                } else if (checkedCount <= 2) {
+                    resultText.textContent = 'Sinais de desgaste inicial. A manutenção preventiva é recomendada para evitar problemas futuros.';
+                    resultDiv.classList.add('bg-yellow-100');
+                } else {
+                    resultText.textContent = 'Atenção! Vários sinais indicam alto risco de falha. Recomendamos agendar uma manutenção o mais rápido possível para garantir sua segurança.';
+                    resultDiv.classList.add('bg-red-100');
+                }
+            }
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateDiagnostic);
+            });
+            
+            updateDiagnostic(); // Initial call
+
+            // FAQ Accordion Logic
+            const questions = document.querySelectorAll('.faq-question');
+            questions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const wasActive = question.classList.contains('active');
+                    
+                    questions.forEach(q => {
+                        q.classList.remove('active');
+                        q.querySelector('span').style.transform = 'rotate(0deg)';
+                    });
+
+                    if (!wasActive) {
+                        question.classList.add('active');
+                        question.querySelector('span').style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
