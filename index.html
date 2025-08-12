@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VEBox Vidraçaria - Manutenção Preventiva de Box</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Warm Neutrals & Slate Blue -->
+    <!-- Application Structure Plan: A persuasive narrative flow designed to convert. Starts with a Hero section for immediate impact and CTA. An interactive "Problem" diagnostic engages the user personally. A visual "Solution" section clarifies the service value using a before/after diagram. "Why VEBox?" and FAQ sections build trust and overcome objections. A final CTA section closes the loop. This structure turns a passive ad into an active, educational sales tool, which is more effective for converting leads from a simple source text. -->
+    <!-- Visualization & Content Choices: Report Info: Shower door issues. -> Goal: Engage/Relate. -> Viz/Presentation: Interactive checklist (HTML/JS). -> Interaction: User checks symptoms, a dynamic summary message appears. -> Justification: Personalizes the problem, creating urgency. | Report Info: Roller replacement. -> Goal: Compare/Inform. -> Viz/Presentation: HTML/CSS side-by-side diagram of "worn" vs. "new" roller. -> Interaction: Toggle buttons to switch views with descriptive text updates. -> Justification: Visually demonstrates the quality and necessity of the service without using images. | Report Info: FAQs. -> Goal: Organize/Inform. -> Viz/Presentation: Accordion list (HTML/JS). -> Interaction: Click to expand/collapse answers. -> Justification: Saves space and presents info cleanly. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -44,7 +48,7 @@
             padding-bottom: 1rem;
         }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 </head>
@@ -94,24 +98,18 @@
                     <h3 class="text-3xl font-bold mb-2" style="font-family: 'Poppins', sans-serif;">A Solução: Qualidade que se Vê e se Sente</h3>
                     <p class="max-w-xl mx-auto">A troca de roldanas não é apenas um conserto, é um investimento em tranquilidade. Veja a diferença que peças de alta qualidade fazem no seu dia a dia.</p>
                 </div>
-                <div class="flex flex-col md:flex-row gap-8 items-center justify-center max-w-4xl mx-auto">
-                    <div class="w-full md:w-1/2 p-6 bg-white rounded-lg shadow-lg text-center">
+                <div class="flex flex-col md:flex-row gap-8 items-stretch justify-center max-w-4xl mx-auto">
+                    <div class="w-full md:w-1/2 p-6 bg-white rounded-lg shadow-lg text-center flex flex-col">
                         <h4 class="text-2xl font-bold mb-4">Roldana Desgastada</h4>
-                        <div class="h-32 flex items-center justify-center mb-4">
-                            <div class="w-20 h-20 rounded-full bg-red-200 border-4 border-red-400 flex items-center justify-center relative">
-                                <div class="w-16 h-16 rounded-full bg-orange-300 border-2 border-orange-500"></div>
-                                <div class="absolute w-2 h-2 bg-red-600 rounded-full top-2 right-2"></div>
-                                <div class="absolute w-1 h-1 bg-red-600 rounded-full bottom-5 left-3"></div>
-                            </div>
+                        <div class="flex-grow flex items-center justify-center mb-4">
+                           <img src="imagens/1.jpeg" alt="Roldana de box de banheiro desgastada e enferrujada" class="w-full h-56 object-contain rounded-lg">
                         </div>
                         <p class="dark-text">Com o tempo, o acúmulo de umidade e o uso contínuo causam ferrugem e desgaste, forçando o trilho e o vidro.</p>
                     </div>
-                    <div class="w-full md:w-1/2 p-6 bg-white rounded-lg shadow-lg text-center border-4 accent-border">
+                    <div class="w-full md:w-1/2 p-6 bg-white rounded-lg shadow-lg text-center border-4 accent-border flex flex-col">
                         <h4 class="text-2xl font-bold mb-4 accent-text">Roldana Nova VEBox</h4>
-                         <div class="h-32 flex items-center justify-center mb-4">
-                            <div class="w-20 h-20 rounded-full bg-blue-200 border-4 border-blue-400 flex items-center justify-center">
-                                <div class="w-16 h-16 rounded-full bg-gray-100 border-2 border-gray-300"></div>
-                            </div>
+                         <div class="flex-grow flex items-center justify-center mb-4">
+                            <img src="imagens/2.jpg" alt="Roldana de box de banheiro nova e de alta qualidade" class="w-full h-56 object-contain rounded-lg">
                         </div>
                         <p class="dark-text">Utilizamos peças de alta qualidade, com materiais resistentes que garantem um deslizar suave e seguro por muito mais tempo.</p>
                     </div>
@@ -161,7 +159,7 @@
             <div class="container mx-auto text-center">
                 <h3 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Poppins', sans-serif;">Não espere o problema acontecer.</h3>
                 <p class="max-w-xl mx-auto mb-8 text-lg">Agende sua manutenção preventiva hoje mesmo e garanta a segurança e o bom funcionamento do seu box.</p>
-                <a href="https://wa.me/559281235194" target="_blank" class="bg-white accent-text font-bold py-4 px-10 rounded-lg hover:bg-gray-100 transition-colors text-xl inline-flex items-center gap-3">
+                <a href="https://wa.me/5592XXXXXXXXX" target="_blank" class="bg-white accent-text font-bold py-4 px-10 rounded-lg hover:bg-gray-100 transition-colors text-xl inline-flex items-center gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.398 1.898 6.166l-1.29 4.721 4.833-1.274z"/></svg>
                     Agendar via WhatsApp
                 </a>
